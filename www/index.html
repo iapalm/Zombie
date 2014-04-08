@@ -33,6 +33,7 @@
                 element1.name = "chkbox[]";
                 element1.checked = todoDictionary["check"];
                 element1.setAttribute("onclick", "checkboxClicked()");
+                element1.className = "checkbox";
                 cell1.appendChild(element1);
                 
                 //create the textbox
@@ -44,6 +45,7 @@
                 element2.id = "text" + rowID;
                 element2.value = todoDictionary["text"];
                 element2.setAttribute("onchange", "saveToDoList()");
+                element2.className - "textbox";
                 cell2.appendChild(element2);
                 
                 //create the view button
@@ -53,6 +55,7 @@
                 element3.id = rowID;
                 element3.value = "View";
                 element3.setAttribute("onclick", "viewSelectedRow(document.getElementById('text' + this.id))");
+                element3.className = "viewButton";
                 cell3.appendChild(element3);
                 
                 //create the delete button
@@ -61,6 +64,7 @@
                 element4.type = "button";
                 element4.value = "Delete";
                 element4.setAttribute("onclick", "deleteSelectedRow(this)");
+                element4.className = "deleteButton";
                 cell4.appendChild(element4);
                 
                 //update UI, save list
@@ -195,9 +199,10 @@
         </script>
     </head>
     <body onload="loadToDoList()">
-        <input type="button" value="Add To-Do" onclick = "createNewToDo()"/>
-        <input type="button" value="Remove Completed Tasks" onclick = "removeCompletedTasks()" />
+        <img src = "img/header.png" width = "100%"/>
+        <button type = "button" class = "addToDo" onclick="createNewToDo()"><img src ="img/button_addtodo.png"/></button>
+        <button type = "button" class = "removeTasks" onclick="removeCompletedTasks()"><img src="img/button_removetasks.png"/></button>
         <br/><br/>
-        <table id="dataTable" width="100%" height = "100%" border="1"></table>
+        <table id="dataTable" width="100%" border="1"></table>
     </body>
 </html>
